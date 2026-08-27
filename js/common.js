@@ -1,5 +1,11 @@
 // MBTI 공부법 연구소 - 공통 스크립트 (공유 버튼 등)
 
+function trackShare(method) {
+  if (typeof gtag === 'function') {
+    gtag('event', 'share_click', { method: method });
+  }
+}
+
 function showToast(message) {
   var toast = document.querySelector('.share-toast');
   if (!toast) {
@@ -25,6 +31,7 @@ function bindShareButtons() {
 
       if (navigator.share) {
         navigator.share({ title: title, text: text, url: url }).catch(function () {});
+        trackShare('native_share');
         return;
       }
 
@@ -37,8 +44,10 @@ function bindShareButtons() {
           .catch(function () {
             showToast(url);
           });
+        trackShare('clipboard');
       } else {
         window.prompt('아래 링크를 복사해서 친구에게 공유해보세요', url);
+        trackShare('prompt');
       }
     });
   });

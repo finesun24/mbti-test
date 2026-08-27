@@ -9,10 +9,17 @@ var GROUPS = {
 
 var TOTAL_QUESTIONS = 10;
 
+function trackEvent(name, params) {
+  if (typeof gtag === 'function') {
+    gtag('event', name, params || {});
+  }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   var form = document.getElementById('quiz-form');
   var warning = document.getElementById('quiz-warning');
   var resultBox = document.getElementById('result-box');
+  var hasStarted = false;
 
   form.addEventListener('change', function (e) {
     if (e.target.name && e.target.name.indexOf('q') === 0) {
@@ -20,6 +27,11 @@ document.addEventListener('DOMContentLoaded', function () {
       labels.forEach(function (input) {
         input.closest('.option-label').classList.toggle('checked', input.checked);
       });
+
+      if (!hasStarted) {
+        hasStarted = true;
+        trackEvent('quiz_start');
+      }
     }
   });
 
@@ -40,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (answeredCount < TOTAL_QUESTIONS) {
       warning.textContent =
         '아직 ' + (TOTAL_QUESTIONS - answeredCount) + '개 문항에 답하지 않았어요. 모든 문항에 답해주세요.';
+      trackEvent('quiz_submit_incomplete', { answered_count: answeredCount });
       return;
     }
 
@@ -83,6 +96,8 @@ document.addEventListener('DOMContentLoaded', function () {
       '나의 공부 유형은 ' + top.label + '! 너의 공부 유형도 확인해봐 🙌'
     );
     shareBtn.setAttribute('data-share-url', window.location.origin + window.location.pathname.replace(/study\.html$/, 'study.html'));
+
+    trackEvent('quiz_complete', { result_group: topKey, result_label: top.label });
 
     resultBox.classList.add('show');
     resultBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
