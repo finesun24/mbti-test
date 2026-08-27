@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>공부습관 자가진단 - MBTI 공부법 연구소</title>
+  <meta name="description" content="10문항 공부습관 자가진단으로 나의 MBTI 공부 유형(NT/NF/SJ/SP)을 확인해보세요." />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/quiz.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="index.html">MBTI <span>공부법 연구소</span></a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="메뉴 열기">☰</label>
+      <nav class="nav">
+        <a href="index.html">홈</a>
+        <a href="nt.html">NT 분석가</a>
+        <a href="nf.html">NF 외교관</a>
+        <a href="sj.html">SJ 관리자</a>
+        <a href="sp.html">SP 탐험가</a>
+        <a href="study.html" class="nav-cta active">자가진단</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding-bottom: 8px;">
+      <div class="container">
+        <h1>공부습관 <strong>자가진단</strong></h1>
+        <p>10개의 문항에 솔직하게 답해보세요. 가장 마음이 가는 답을 선택하면, 끝에서 나의 공부 유형을 알려드려요.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container" style="max-width: 720px;">
+        <p class="quiz-progress">총 10문항 · 소요시간 약 1분</p>
+
+        <form id="quiz-form" novalidate>
+
+          <div class="question-card">
+            <p class="q-text">1. 새로운 개념을 배울 때 나는?</p>
+            <div class="options">
+              <label class="option-label"><input type="radio" name="q1" value="NT" />원리와 이유부터 이해하고 싶다</label>
+              <label class="option-label"><input type="radio" name="q1" value="NF" />나에게 어떤 의미가 있는지 먼저 생각한다</label>
+              <label class="option-label"><input type="radio" name="q1" value="SJ" />교과서 순서대로 차근차근 공부한다</label>
+              <label class="option-label"><input type="radio" name="q1" value="SP" />일단 문제를 풀어보며 감을 잡는다</label>
+            </div>
+          </div>
+
+          <div class="question-card">
+            <p class="q-text">2. 시험공부 계획을 세울 때 나는?</p>
+            <div class="options">
+              <label class="option-label"><input type="radio" name="q2" value="NT" />가장 효율적인 최적 경로를 찾는다</label>
+              <label class="option-label"><input type="radio" name="q2" value="NF" />그날 기분과 컨디션에 따라 유동적으로 짠다</label>
+              <label class="option-label"><input type="radio" name="q2" value="SJ" />세부 시간표를 만들어 꼼꼼히 지킨다</label>
+              <label class="option-label"><input type="radio" name="q2" value="SP" />계획보다는 벼락치기가 더 잘 맞는다</label>
+            </div>
+          </div>
+
+          <div class="question-card">
+            <p class="q-text">3. 어려운 문제를 만나면 나는?</p>
+            <div class="options">
+              <label class="option-label"><input type="radio" name="q3" value="NT" />원리를 다시 파고들어 이해하려 한다</label>
+              <label class="option-label"><input type="radio" name="q3" value="NF" />비슷한 경험이나 이야기로 연결지어본다</label>
+              <label class="option-label"><input type="radio" name="q3" value="SJ" />기출 유형을 찾아 반복 연습한다</label>
+              <label class="option-label"><input type="radio" name="q3" value="SP" />일단 손으로 풀어보며 시행착오를 겪는다</label>
+            </div>
+          </div>
+
+          <div class="question-card">
+            <p class="q-text">4. 공부할 때 가장 선호하는 환경은?</p>
+            <div class="options">
+              <label class="option-label"><input type="radio" name="q4" value="NT" />방해 없는 조용한 혼자만의 공간</label>
+              <label class="option-label"><input type="radio" name="q4" value="NF" />좋아하는 음악이 흐르는 감성적인 분위기</label>
+              <label class="option-label"><input type="radio" name="q4" value="SJ" />정돈된 책상과 익숙한 루틴</label>
+              <label class="option-label"><input type="radio" name="q4" value="SP" />자유롭고 활동적인 분위기</label>
+            </div>
+          </div>
+
+          <div class="question-card">
+            <p class="q-text">5. 암기가 필요한 내용은 어떻게 외우나요?</p>
+            <div class="options">
+              <label class="option-label"><input type="radio" name="q5" value="NT" />개념 구조를 이해하면 자연히 외워진다</label>
+              <label class="option-label"><input type="radio" name="q5" value="NF" />이야기나 이미지로 만들어 외운다</label>
+              <label class="option-label"><input type="radio" name="q5" value="SJ" />반복해서 쓰고 소리내어 외운다</label>
+              <label class="option-label"><input type="radio" name="q5" value="SP" />퀴즈나 게임처럼 만들어 외운다</label>
+            </div>
+          </div>
+
+          <div class="question-card">
+            <p class="q-text">6. 그룹 스터디에 대한 나의 생각은?</p>
+            <div class="options">
+              <label class="option-label"><input type="radio" name="q6" value="NT" />필요하면 하지만 혼자가 더 효율적이다</label>
+              <label class="option-label"><input type="radio" name="q6" value="NF" />함께 가르치고 배우는 게 즐겁다</label>
+              <label class="option-label"><input type="radio" name="q6" value="SJ" />서로 체크해주며 페이스를 지키는 게 좋다</label>
+              <label class="option-label"><input type="radio" name="q6" value="SP" />같이 하면 재미있고 몰입이 잘 된다</label>
+            </div>
+          </div>
+
+          <div class="question-card">
+            <p class="q-text">7. 시험 전날 나는 주로?</p>
+            <div class="options">
+              <label class="option-label"><input type="radio" name="q7" value="NT" />핵심 원리를 마지막으로 재점검한다</label>
+              <label class="option-label"><input type="radio" name="q7" value="NF" />마음을 다잡고 스스로에게 응원의 말을 한다</label>
+              <label class="option-label"><input type="radio" name="q7" value="SJ" />체크리스트로 빠진 부분이 없는지 확인한다</label>
+              <label class="option-label"><input type="radio" name="q7" value="SP" />실전처럼 모의고사를 풀어본다</label>
+            </div>
+          </div>
+
+          <div class="question-card">
+            <p class="q-text">8. 공부가 잘 안 될 때 나는?</p>
+            <div class="options">
+              <label class="option-label"><input type="radio" name="q8" value="NT" />왜 안되는지 원인을 분석한다</label>
+              <label class="option-label"><input type="radio" name="q8" value="NF" />동기부여 영상이나 응원의 말을 찾아본다</label>
+              <label class="option-label"><input type="radio" name="q8" value="SJ" />일단 정해진 분량을 끝까지 채운다</label>
+              <label class="option-label"><input type="radio" name="q8" value="SP" />잠깐 쉬었다가 다른 활동으로 전환한다</label>
+            </div>
+          </div>
+
+          <div class="question-card">
+            <p class="q-text">9. 나의 노트 필기 스타일은?</p>
+            <div class="options">
+              <label class="option-label"><input type="radio" name="q9" value="NT" />핵심 개념과 논리 구조 위주로 정리한다</label>
+              <label class="option-label"><input type="radio" name="q9" value="NF" />색깔과 그림을 활용해 감성적으로 정리한다</label>
+              <label class="option-label"><input type="radio" name="q9" value="SJ" />목차와 순서를 갖춰 깔끔하게 정리한다</label>
+              <label class="option-label"><input type="radio" name="q9" value="SP" />필요한 부분만 간단히, 나머지는 머릿속에 둔다</label>
+            </div>
+          </div>
+
+          <div class="question-card">
+            <p class="q-text">10. 나에게 가장 큰 동기부여가 되는 것은?</p>
+            <div class="options">
+              <label class="option-label"><input type="radio" name="q10" value="NT" />새로운 지식과 성장 그 자체</label>
+              <label class="option-label"><input type="radio" name="q10" value="NF" />의미 있는 목표와 사람들과의 연결</label>
+              <label class="option-label"><input type="radio" name="q10" value="SJ" />목표 달성과 인정받는 성취감</label>
+              <label class="option-label"><input type="radio" name="q10" value="SP" />즉각적인 재미와 짜릿한 성취</label>
+            </div>
+          </div>
+
+          <p class="quiz-warning" id="quiz-warning" role="alert"></p>
+          <div class="quiz-actions">
+            <button type="submit" class="btn btn-primary">결과 확인하기</button>
+          </div>
+        </form>
+
+        <div class="result-box" id="result-box">
+          <span class="emoji-lg" id="result-emoji">🧠</span>
+          <h2 id="result-title">결과</h2>
+          <p id="result-desc"></p>
+          <div class="result-bars" id="result-bars"></div>
+          <div class="result-actions">
+            <a class="btn btn-primary" id="go-group-btn" href="index.html">공부법 보러가기</a>
+            <button class="btn btn-outline" id="share-result-btn" data-share type="button">📤 친구에게 공유하기</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>MBTI 공부법 연구소 · 이 사이트의 진단은 재미와 참고를 위한 것이며 과학적 검증 도구가 아닙니다.</p>
+    </div>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/study.js"></script>
+</body>
+</html>

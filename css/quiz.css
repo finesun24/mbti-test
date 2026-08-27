@@ -1,0 +1,161 @@
+/* MBTI 공부법 연구소 - 자가진단(study) 페이지 전용 스타일 */
+
+.quiz-progress {
+  text-align: center;
+  color: var(--text-light);
+  margin-bottom: 24px;
+}
+
+.question-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow);
+}
+
+.question-card p.q-text {
+  font-weight: 700;
+  margin: 0 0 14px;
+}
+
+.options {
+  display: grid;
+  gap: 10px;
+}
+
+.option-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--cream);
+  border: 2px solid var(--cream-dark);
+  border-radius: 10px;
+  padding: 12px 14px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.option-label:hover {
+  border-color: var(--purple);
+}
+
+.option-label input {
+  accent-color: var(--purple);
+  width: 18px;
+  height: 18px;
+}
+
+.option-label.checked {
+  border-color: var(--purple);
+  background: var(--purple-light);
+}
+
+.quiz-actions {
+  text-align: center;
+  margin: 32px 0;
+}
+
+.quiz-warning {
+  text-align: center;
+  color: #c0392b;
+  font-weight: 600;
+  min-height: 24px;
+}
+
+.result-box {
+  display: none;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 36px 28px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.result-box.show {
+  display: block;
+}
+
+.result-box .emoji-lg {
+  font-size: 3.2rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.result-box h2 {
+  color: var(--purple-dark);
+  margin: 0 0 8px;
+}
+
+.result-bars {
+  display: grid;
+  gap: 12px;
+  max-width: 460px;
+  margin: 28px auto;
+  text-align: left;
+}
+
+.bar-row {
+  display: grid;
+  grid-template-columns: 70px 1fr 40px;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.bar-track {
+  background: var(--cream-dark);
+  border-radius: 999px;
+  height: 14px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  display: block;
+  background: var(--purple);
+  height: 100%;
+  width: 0%;
+  border-radius: 999px;
+  transition: width 0.6s ease;
+}
+
+.bar-row.top .bar-fill {
+  background: var(--purple-dark);
+}
+
+.result-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.share-toast {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--text);
+  color: var(--white);
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.share-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 640px) {
+  .bar-row {
+    grid-template-columns: 56px 1fr 34px;
+    font-size: 0.82rem;
+  }
+}

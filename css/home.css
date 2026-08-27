@@ -1,0 +1,121 @@
+/* MBTI 공부법 연구소 - 메인(index) 페이지 전용 스타일 */
+
+.hero {
+  text-align: center;
+  padding: 72px 24px 56px;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin: 0 0 16px;
+  color: var(--text);
+}
+
+.hero h1 strong {
+  color: var(--purple);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  max-width: 620px;
+  margin: 0 auto 32px;
+}
+
+/* 성향 그룹 카드 */
+.group-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.group-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 28px 20px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.18s, box-shadow 0.18s;
+  border: 2px solid transparent;
+}
+
+.group-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--purple);
+}
+
+.group-card .emoji {
+  font-size: 2.6rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.group-card h3 {
+  margin: 0 0 6px;
+  color: var(--purple-dark);
+  font-size: 1.2rem;
+}
+
+.group-card .types {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-bottom: 10px;
+}
+
+.group-card p {
+  font-size: 0.92rem;
+  color: var(--text-light);
+  margin: 0;
+}
+
+/* 이용 안내 스텝 */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.step-card {
+  background: var(--cream-dark);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+.step-card .num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--purple);
+  color: var(--white);
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.cta-band {
+  text-align: center;
+  background: var(--purple-light);
+  border-radius: var(--radius);
+  padding: 48px 24px;
+  margin: 24px 0;
+}
+
+@media (max-width: 860px) {
+  .group-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .group-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+}
