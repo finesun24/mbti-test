@@ -3,7 +3,7 @@
 .group-hero {
   text-align: center;
   padding: 56px 24px 40px;
-  background: var(--purple-light);
+  background: var(--accent-light);
 }
 
 .group-hero .emoji-lg {
@@ -15,19 +15,19 @@
 .group-hero h1 {
   margin: 0 0 8px;
   font-size: 2rem;
-  color: var(--purple-dark);
+  color: var(--accent-dark);
 }
 
 .group-hero .subtypes {
   font-weight: 700;
-  color: var(--text-light);
+  color: var(--text-secondary);
   margin-bottom: 16px;
 }
 
 .group-hero p.lead {
   max-width: 600px;
   margin: 0 auto;
-  color: var(--text-light);
+  color: var(--text-secondary);
 }
 
 .trait-list {
@@ -40,7 +40,7 @@
 }
 
 .trait-list li {
-  background: var(--white);
+  background: var(--surface);
   border-radius: 12px;
   padding: 16px 18px;
   box-shadow: var(--shadow);
@@ -48,7 +48,7 @@
 }
 
 .trait-list li strong {
-  color: var(--purple-dark);
+  color: var(--accent-dark);
   display: block;
   margin-bottom: 4px;
 }
@@ -60,8 +60,8 @@
 }
 
 .subtype-card {
-  background: var(--white);
-  border-left: 5px solid var(--purple);
+  background: var(--surface);
+  border-left: 5px solid var(--accent);
   border-radius: 12px;
   padding: 20px 22px;
   box-shadow: var(--shadow);
@@ -69,7 +69,7 @@
 
 .subtype-card h3 {
   margin: 0 0 8px;
-  color: var(--purple-dark);
+  color: var(--accent-dark);
 }
 
 .tip-list {
@@ -80,7 +80,7 @@
 }
 
 .tip-list li {
-  background: var(--white);
+  background: var(--surface);
   border-radius: 12px;
   padding: 16px 20px;
   box-shadow: var(--shadow);
@@ -92,7 +92,7 @@
   content: '✔';
   position: absolute;
   left: 16px;
-  color: var(--purple);
+  color: var(--accent);
   font-weight: 800;
 }
 
@@ -104,17 +104,17 @@
 }
 
 .other-groups a {
-  background: var(--white);
+  background: var(--surface);
   padding: 10px 18px;
   border-radius: 999px;
   box-shadow: var(--shadow);
   font-weight: 700;
-  color: var(--purple-dark);
+  color: var(--accent-dark);
 }
 
 .other-groups a:hover {
-  background: var(--purple);
-  color: var(--white);
+  background: var(--accent);
+  color: var(--accent-contrast);
 }
 
 @media (max-width: 860px) {

@@ -12,12 +12,12 @@
 }
 
 .hero h1 strong {
-  color: var(--purple);
+  color: var(--accent);
 }
 
 .hero p {
   font-size: 1.1rem;
-  color: var(--text-light);
+  color: var(--text-secondary);
   max-width: 620px;
   margin: 0 auto 32px;
 }
@@ -30,7 +30,7 @@
 }
 
 .group-card {
-  background: var(--white);
+  background: var(--surface);
   border-radius: var(--radius);
   padding: 28px 20px;
   text-align: center;
@@ -41,7 +41,7 @@
 
 .group-card:hover {
   transform: translateY(-6px);
-  border-color: var(--purple);
+  border-color: var(--accent);
 }
 
 .group-card .emoji {
@@ -52,19 +52,19 @@
 
 .group-card h3 {
   margin: 0 0 6px;
-  color: var(--purple-dark);
+  color: var(--accent-dark);
   font-size: 1.2rem;
 }
 
 .group-card .types {
   font-size: 0.85rem;
-  color: var(--text-light);
+  color: var(--text-secondary);
   margin-bottom: 10px;
 }
 
 .group-card p {
   font-size: 0.92rem;
-  color: var(--text-light);
+  color: var(--text-secondary);
   margin: 0;
 }
 
@@ -76,7 +76,7 @@
 }
 
 .step-card {
-  background: var(--cream-dark);
+  background: var(--bg-alt);
   border-radius: var(--radius);
   padding: 24px;
 }
@@ -88,15 +88,15 @@
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: var(--purple);
-  color: var(--white);
+  background: var(--accent);
+  color: var(--accent-contrast);
   font-weight: 800;
   margin-bottom: 12px;
 }
 
 .cta-band {
   text-align: center;
-  background: var(--purple-light);
+  background: var(--accent-light);
   border-radius: var(--radius);
   padding: 48px 24px;
   margin: 24px 0;

@@ -2,6 +2,14 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('mbti-theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MBTI 공부법 연구소 - 나에게 맞는 공부법 찾기</title>
   <meta name="description" content="MBTI 성향별로 나에게 꼭 맞는 공부법과 시험 꿀팁을 알려드립니다. 10문항 자가진단으로 내 공부 유형을 확인해보세요." />
@@ -12,16 +20,19 @@
   <header class="site-header">
     <div class="header-inner">
       <a class="logo" href="index.html">MBTI <span>공부법 연구소</span></a>
-      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-      <label for="nav-toggle" class="nav-toggle-label" aria-label="메뉴 열기">☰</label>
-      <nav class="nav">
-        <a href="index.html" class="active">홈</a>
-        <a href="nt.html">NT 분석가</a>
-        <a href="nf.html">NF 외교관</a>
-        <a href="sj.html">SJ 관리자</a>
-        <a href="sp.html">SP 탐험가</a>
-        <a href="study.html" class="nav-cta">자가진단</a>
-      </nav>
+      <div class="header-right">
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="다크 모드로 전환">🌙</button>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label for="nav-toggle" class="nav-toggle-label" aria-label="메뉴 열기">☰</label>
+        <nav class="nav">
+          <a href="index.html" class="active">홈</a>
+          <a href="nt.html">NT 분석가</a>
+          <a href="nf.html">NF 외교관</a>
+          <a href="sj.html">SJ 관리자</a>
+          <a href="sp.html">SP 탐험가</a>
+          <a href="study.html" class="nav-cta">자가진단</a>
+        </nav>
+      </div>
     </div>
   </header>
 
@@ -119,5 +130,6 @@
   </footer>
 
   <script src="js/common.js"></script>
+  <script src="js/theme.js"></script>
 </body>
 </html>

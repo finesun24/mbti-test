@@ -2,12 +2,12 @@
 
 .quiz-progress {
   text-align: center;
-  color: var(--text-light);
+  color: var(--text-secondary);
   margin-bottom: 24px;
 }
 
 .question-card {
-  background: var(--white);
+  background: var(--surface);
   border-radius: var(--radius);
   padding: 22px 24px;
   margin-bottom: 18px;
@@ -28,8 +28,8 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  background: var(--cream);
-  border: 2px solid var(--cream-dark);
+  background: var(--bg-alt);
+  border: 2px solid var(--border);
   border-radius: 10px;
   padding: 12px 14px;
   cursor: pointer;
@@ -38,18 +38,18 @@
 }
 
 .option-label:hover {
-  border-color: var(--purple);
+  border-color: var(--accent);
 }
 
 .option-label input {
-  accent-color: var(--purple);
+  accent-color: var(--accent);
   width: 18px;
   height: 18px;
 }
 
 .option-label.checked {
-  border-color: var(--purple);
-  background: var(--purple-light);
+  border-color: var(--accent);
+  background: var(--accent-light);
 }
 
 .quiz-actions {
@@ -59,14 +59,14 @@
 
 .quiz-warning {
   text-align: center;
-  color: #c0392b;
+  color: var(--warning);
   font-weight: 600;
   min-height: 24px;
 }
 
 .result-box {
   display: none;
-  background: var(--white);
+  background: var(--surface);
   border-radius: var(--radius);
   padding: 36px 28px;
   box-shadow: var(--shadow);
@@ -84,7 +84,7 @@
 }
 
 .result-box h2 {
-  color: var(--purple-dark);
+  color: var(--accent-dark);
   margin: 0 0 8px;
 }
 
@@ -106,7 +106,7 @@
 }
 
 .bar-track {
-  background: var(--cream-dark);
+  background: var(--surface-alt);
   border-radius: 999px;
   height: 14px;
   overflow: hidden;
@@ -114,7 +114,7 @@
 
 .bar-fill {
   display: block;
-  background: var(--purple);
+  background: var(--accent);
   height: 100%;
   width: 0%;
   border-radius: 999px;
@@ -122,7 +122,7 @@
 }
 
 .bar-row.top .bar-fill {
-  background: var(--purple-dark);
+  background: var(--accent-dark);
 }
 
 .result-actions {
@@ -139,7 +139,7 @@
   left: 50%;
   transform: translateX(-50%) translateY(20px);
   background: var(--text);
-  color: var(--white);
+  color: var(--surface);
   padding: 12px 22px;
   border-radius: 999px;
   font-size: 0.9rem;

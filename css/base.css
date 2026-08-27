@@ -1,18 +1,60 @@
-/* MBTI 공부법 연구소 - 기본 스타일 (모든 페이지 공통) */
+/* MBTI 공부법 연구소 - 기본 스타일 (모든 페이지 공통)
+   디자인 시스템: adobe.com/kr 참고 (Adobe Red, 그레이 스케일, pill 버튼, 다크/라이트 모드) */
 
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
 
 :root {
-  --cream: #fff9ef;
-  --cream-dark: #f3ead6;
-  --purple: #7c4dff;
-  --purple-dark: #5e35d1;
-  --purple-light: #efe7ff;
-  --text: #2e2a26;
-  --text-light: #6b6459;
-  --white: #ffffff;
-  --shadow: 0 4px 20px rgba(124, 77, 255, 0.14);
-  --radius: 18px;
+  --bg: #ffffff;
+  --bg-alt: #f8f8f8;
+  --surface: #ffffff;
+  --surface-alt: #f3f3f3;
+  --border: #e1e1e1;
+  --accent: #eb1000;
+  --accent-dark: #b72818;
+  --accent-hover: #b72818;
+  --accent-light: #ffebe8;
+  --accent-contrast: #ffffff;
+  --warning: #92400e;
+  --text: #131313;
+  --text-secondary: #505050;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --radius: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #131313;
+    --bg-alt: #1a1a1a;
+    --surface: #1c1c1c;
+    --surface-alt: #292929;
+    --border: #383838;
+    --accent: #ff513d;
+    --accent-dark: #ffbcb4;
+    --accent-hover: #ff7665;
+    --accent-light: #3b0b04;
+    --accent-contrast: #131313;
+    --warning: #ffb020;
+    --text: #f8f8f8;
+    --text-secondary: #c6c6c6;
+    --shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #131313;
+  --bg-alt: #1a1a1a;
+  --surface: #1c1c1c;
+  --surface-alt: #292929;
+  --border: #383838;
+  --accent: #ff513d;
+  --accent-dark: #ffbcb4;
+  --accent-hover: #ff7665;
+  --accent-light: #3b0b04;
+  --accent-contrast: #131313;
+  --warning: #ffb020;
+  --text: #f8f8f8;
+  --text-secondary: #c6c6c6;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
 }
 
 * {
@@ -25,15 +67,23 @@ html {
 
 body {
   margin: 0;
-  background: var(--cream);
+  background: var(--bg);
   color: var(--text);
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
   line-height: 1.7;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 img {
@@ -51,9 +101,11 @@ img {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 249, 239, 0.92);
+  background: var(--bg);
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
   backdrop-filter: blur(6px);
-  border-bottom: 1px solid var(--cream-dark);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s ease, border-color 0.2s ease;
 }
 
 .header-inner {
@@ -69,7 +121,7 @@ img {
 .logo {
   font-weight: 800;
   font-size: 1.15rem;
-  color: var(--purple-dark);
+  color: var(--accent-dark);
 }
 
 .logo span {
@@ -87,24 +139,51 @@ img {
   border-radius: 999px;
   font-weight: 600;
   font-size: 0.95rem;
-  color: var(--text-light);
+  color: var(--text-secondary);
   transition: background 0.15s, color 0.15s;
 }
 
 .nav a:hover,
 .nav a.active {
-  background: var(--purple-light);
-  color: var(--purple-dark);
+  background: var(--accent-light);
+  color: var(--accent-dark);
 }
 
 .nav a.nav-cta {
-  background: var(--purple);
-  color: var(--white);
+  background: var(--accent);
+  color: var(--accent-contrast);
 }
 
 .nav a.nav-cta:hover {
-  background: var(--purple-dark);
-  color: var(--white);
+  background: var(--accent-hover);
+  color: var(--accent-contrast);
+}
+
+/* 헤더 우측 영역: 다크모드 토글 + 모바일 메뉴 버튼 + 내비게이션 */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface-alt);
+  color: var(--text);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.15s;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
 }
 
 .nav-toggle {
@@ -115,7 +194,7 @@ img {
   display: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: var(--purple-dark);
+  color: var(--accent-dark);
   padding: 4px 10px;
 }
 
@@ -132,24 +211,25 @@ img {
 }
 
 .btn-primary {
-  background: var(--purple);
-  color: var(--white);
+  background: var(--accent);
+  color: var(--accent-contrast);
   box-shadow: var(--shadow);
 }
 
 .btn-primary:hover {
-  background: var(--purple-dark);
+  background: var(--accent-hover);
+  color: var(--accent-contrast);
   transform: translateY(-2px);
 }
 
 .btn-outline {
   background: transparent;
-  color: var(--purple-dark);
-  border: 2px solid var(--purple);
+  color: var(--accent-dark);
+  border: 2px solid var(--accent);
 }
 
 .btn-outline:hover {
-  background: var(--purple-light);
+  background: var(--accent-light);
 }
 
 /* 공통 섹션 타이틀 */
@@ -165,7 +245,7 @@ section {
 
 .section-sub {
   text-align: center;
-  color: var(--text-light);
+  color: var(--text-secondary);
   margin-bottom: 40px;
 }
 
@@ -173,9 +253,9 @@ section {
 .site-footer {
   text-align: center;
   padding: 32px 24px;
-  color: var(--text-light);
+  color: var(--text-secondary);
   font-size: 0.85rem;
-  border-top: 1px solid var(--cream-dark);
+  border-top: 1px solid var(--border);
 }
 
 /* 반응형: 모바일 내비게이션 */
@@ -188,7 +268,7 @@ section {
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--white);
+    background: var(--surface);
     flex-direction: column;
     align-items: stretch;
     padding: 12px;

@@ -2,6 +2,14 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('mbti-theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NF 외교관형 공부법 - MBTI 공부법 연구소</title>
   <meta name="description" content="INFJ, INFP, ENFJ, ENFP를 위한 의미 중심, 스토리텔링 공부법과 시험 꿀팁을 소개합니다." />
@@ -12,9 +20,11 @@
   <header class="site-header">
     <div class="header-inner">
       <a class="logo" href="index.html">MBTI <span>공부법 연구소</span></a>
-      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-      <label for="nav-toggle" class="nav-toggle-label" aria-label="메뉴 열기">☰</label>
-      <nav class="nav">
+      <div class="header-right">
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="다크 모드로 전환">🌙</button>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label for="nav-toggle" class="nav-toggle-label" aria-label="메뉴 열기">☰</label>
+        <nav class="nav">
         <a href="index.html">홈</a>
         <a href="nt.html">NT 분석가</a>
         <a href="nf.html" class="active">NF 외교관</a>
@@ -22,6 +32,7 @@
         <a href="sp.html">SP 탐험가</a>
         <a href="study.html" class="nav-cta">자가진단</a>
       </nav>
+      </div>
     </div>
   </header>
 
@@ -104,5 +115,6 @@
   </footer>
 
   <script src="js/common.js"></script>
+  <script src="js/theme.js"></script>
 </body>
 </html>
